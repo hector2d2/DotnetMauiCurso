@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.ContraseñaValida"
+             Title="ContraseñaValida">
+    <VerticalStackLayout Margin="8">
+        <Label Text="Contraseña Anterior" />
+        <Entry Text="DotnetMaui"
+               x:Name="ContraseñaAnterior"
+               IsReadOnly="True" />
+        <Label Text="Contraseña Nueva" />
+        <Entry x:Name="InputResultado"
+               TextChanged="OnEntryTextChange"/>
+        <Label x:Name="txtValidacion1"
+               Text="* La contraseña no puede tener menos de 8 caracteres"/>
+        <Label Text="* La nueva contraseña no puede ser la misma que la contraseña anterior"
+               x:Name="txtValidacion2" />
+        <Button Text="Cambiar Contraseña"
+                x:Name="BtnCambiarContraseña"
+                Clicked="OnBtnCambiarContraseñaClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

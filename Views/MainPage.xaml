@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:VMmain="clr-namespace:Inicio.ViewModel"
+             Shell.BackgroundColor="White"
+             x:Name="MainContentPage"
+             x:Class="Inicio.Views.MainPage">
+    <ContentPage.BindingContext>
+        <VMmain:VMMain/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout BackgroundColor="White"
+                         Spacing="25">
+        <HorizontalStackLayout>
+            <Entry Placeholder="Ingresar el texto"                                     
+                    Text="{Binding TxtInput}"
+                    WidthRequest="250"/>
+            <Button Text="Enter"  
+                    Command="{Binding CopyTextInputCommand}"                     
+                    x:Name="BtnResultado"/>
+        </HorizontalStackLayout>
+        <Label x:Name="TxtResultado"                
+                Text="{Binding TxtResultado1}"
+                BackgroundColor="Blue"
+                TextColor="White"/> 
+        <Label x:Name="TxtResultado2"
+                Text="Resultado"
+                BackgroundColor="Green"
+                TextColor="White"/> 
+        <Button Text="Navegar a segunda pagina"
+                Command="{Binding CommandNavigateSecondPage}"/>
+    </VerticalStackLayout>
+</ContentPage>

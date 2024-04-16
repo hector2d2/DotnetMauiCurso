@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inicio.Views.Curso.Imagenes.Imagen"
+             Title="Imagen">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Image Source="perro.jpeg" />
+            <Image Source="https://doggiesintown.com/wp-content/uploads/2023/08/El-Fascinante-Mundo-del-Perro-Salchicha-Explorando-su-Historia-Crianza-y-Personalidad-Unica-Doggies-in-Town-1200x676-5.jpg" />
+            <Image Source="pato.gif"
+                   x:Name="duckGif"
+                   Loaded="DuckLoaded" />
+            <Image>
+                <Image.Source>
+                    <FontImageSource Glyph=""
+                                     Color="Blue"
+                                     Size="50"
+                                     FontFamily="FAS" />
+                </Image.Source>
+            </Image>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
