@@ -3,28 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Inicio.Views.MenuInicio.MenuInicio"
              xmlns:VMmenuInicio="clr-namespace:Inicio.ViewModel"
+             xmlns:CSection="clr-namespace:Inicio.Shared.Section"
              Title="MenuInicio2">
     <ContentPage.BindingContext>
         <VMmenuInicio:VMMenuInicio />
     </ContentPage.BindingContext>
     <VerticalStackLayout>
-        <Border Margin="8"
-                StrokeThickness="2"
-                Padding="8"
-                StrokeShape="RoundRectangle 25">
-            <Border.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding NavigateToEjerciciosCommand}" />
-            </Border.GestureRecognizers>
-            <Label Text="Ejercicios" />
-        </Border>
-        <Border Margin="8"
-                StrokeThickness="2"
-                Padding="8"
-                StrokeShape="RoundRectangle 25">
-            <Border.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding NavigateToCursoCommand}" />
-            </Border.GestureRecognizers>
-            <Label Text="Curso" />
-        </Border>
+        <CSection:Section Title="Ejercicios"
+                          RouteName="MenuEjercicios" />
+        <CSection:Section Title="Curso"
+                          RouteName="MenuCurso" />
     </VerticalStackLayout>
 </ContentPage>

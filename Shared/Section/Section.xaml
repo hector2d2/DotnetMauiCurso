@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="CV"
+             x:Class="Inicio.Shared.Section.Section">
+    <Border Margin="8"
+            StrokeThickness="2"
+            Padding="8"
+            StrokeShape="RoundRectangle 25">
+        <Border.GestureRecognizers>
+            <TapGestureRecognizer x:Name="SectionComponent"
+                                  Tapped="OnSectionComponentTapped"/>
+        </Border.GestureRecognizers>
+        <Label Text="{Binding Source={x:Reference CV},Path=Title}" />
+    </Border>
+</ContentView>
