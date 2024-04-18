@@ -1,6 +1,7 @@
 ﻿using Inicio.Views.Curso.Imagenes;
 using Inicio.Views.Curso.MenuCurso;
 using Inicio.Views.Ejercicios.MenuEjercicios;
+using Inicio.Views.Ejercicios.TocaElCuadrado;
 using MauiApp1;
 
 namespace Inicio;
@@ -15,5 +16,6 @@ public partial class AppShell : Shell
 		Routing.RegisterRoute(nameof(Imagen),typeof(Imagen));
 		Routing.RegisterRoute(nameof(MenuEjercicios),typeof(MenuEjercicios));
 		Routing.RegisterRoute(nameof(MenuCurso),typeof(MenuCurso));
+		Routing.RegisterRoute(nameof(TocaElCuadrado),typeof(TocaElCuadrado));
 	}
 }

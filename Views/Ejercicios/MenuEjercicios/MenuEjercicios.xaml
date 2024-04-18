@@ -7,5 +7,7 @@
     <VerticalStackLayout>
         <CSection:Section Title="ContraseñaValida"
                           RouteName="ContraseñaValida" />
+        <CSection:Section Title="TocaElCuadrado"
+                          RouteName="TocaElCuadrado" />
     </VerticalStackLayout>
 </ContentPage>
