@@ -2,8 +2,33 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Inicio.Views.Ejercicios.TocaElCuadrado.TocaElCuadrado"
+             xmlns:VMCuadrado="clr-namespace:Inicio.ViewModel"
+             xmlns:Converters="clr-namespace:Inicio.Converters"
+             x:Name="CP"
              Title="TocaElCuadrado">
-    <Grid ColumnDefinitions="*,*,*,*"
+    <ContentPage.Resources>
+        <Converters:ConvertirAlturaCuadrado x:Key="ConvertirAlturaCuadrado" />
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <VMCuadrado:VMTocaElCuadrado />
+    </ContentPage.BindingContext>
+    <CollectionView ItemsSource="{Binding Cuadricula}"
+                    ItemsLayout="VerticalGrid, 4">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Border HeightRequest="{Binding Path=Height,Source={x:Reference CP},Converter={x:StaticResource ConvertirAlturaCuadrado}}"
+                        BackgroundColor="{Binding CurrentColor}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Path=BindingContext.TocoElCuadradoCommand,Source={x:Reference CP}}"
+                                              CommandParameter="{Binding .}" />
+                    </Border.GestureRecognizers>
+                    <Label Text="{Binding Dato}" />
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
+<!-- <Grid ColumnDefinitions="*,*,*,*"
           RowDefinitions="*,*,*,*"
           x:Name="Cuadricula">
         <Border Grid.Column="0"
@@ -119,5 +144,4 @@
             </Border.GestureRecognizers>
             <Label Text="16" />
         </Border>
-    </Grid>
-</ContentPage>
+    </Grid> -->
