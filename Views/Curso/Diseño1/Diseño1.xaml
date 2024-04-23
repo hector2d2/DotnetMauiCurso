@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inicio.Views.Curso.Diseño1.Diseño1"
+             Shell.BackgroundColor="#E9EDF2">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior>
+            <BackButtonBehavior.IconOverride>
+                <FontImageSource Glyph=""
+                                 Size="10"
+                                 FontFamily="FAS" />
+            </BackButtonBehavior.IconOverride>
+        </BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <Shell.TitleView>
+        <Label Text="Texto Modificado"
+               FontSize="Title"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+    </Shell.TitleView>
+    <Grid RowDefinitions="*,80"
+          Padding="20"
+          BackgroundColor="#E9EDF2">
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions="*,*,*">
+                <Border StrokeShape="RoundRectangle 50"
+                        Margin="8,0"
+                        BackgroundColor="Gray">
+                    <Label Text="Agosto"
+                           HorizontalOptions="Center"
+                           Margin="15,8"
+                           TextColor="White" />
+                </Border>
+                <Border StrokeShape="RoundRectangle 50"
+                        Grid.Column="1"
+                        Margin="8,0"
+                        BackgroundColor="#00AC7F">
+                    <Label Text="Septiembre"
+                           HorizontalOptions="Center"
+                           Margin="15,8"
+                           TextColor="White" />
+                </Border>
+                <Border StrokeShape="RoundRectangle 50"
+                        Grid.Column="2"
+                        Margin="8,0"
+                        BackgroundColor="Gray">
+                    <Label Text="Octubre"
+                           HorizontalOptions="Center"
+                           Margin="15,8"
+                           TextColor="White" />
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+        <Label Text="Pantalla 2"
+               x:Name="pantalla2"
+               IsVisible="False"
+               Grid.Row="0" />
+        <Label Text="Pantalla 3"
+               IsVisible="False"
+               x:Name="pantalla3"
+               Grid.Row="0" />
+        <Grid ColumnDefinitions="*,*,*"
+              Grid.Row="1">
+            <Image HeightRequest="25">
+                <Image.Source>
+                    <FontImageSource Glyph=""
+                                     Color="Gray"
+                                     Size="25"
+                                     FontFamily="FAS" />
+                </Image.Source>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="Menu1"
+                                          Tapped="Menu1OnTap" />
+                </Image.GestureRecognizers>
+            </Image>
+            <!-- <Label Text="Menu1"
+                   BackgroundColor="Yellow">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="Menu1"
+                                          Tapped="Menu1OnTap" />
+                </Label.GestureRecognizers> 
+            </Label> -->
+            <!-- <Label Text="Menu2"
+                   Grid.Column="1"
+                   BackgroundColor="Gray">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="Menu2"
+                                          Tapped="Menu2OnTap" />
+                </Label.GestureRecognizers>
+            </Label> -->
+            <Border StrokeShape="RoundRectangle 50"
+                    VerticalOptions="Start"
+                    HeightRequest="60"
+                    WidthRequest="60"
+                    BackgroundColor="#00AC7F"
+                    Grid.Column="1">
+                <Image HeightRequest="25">
+                    <Image.Source>
+                        <FontImageSource Glyph="+"
+                                         Color="White"
+                                         FontFamily="FAS" />
+                    </Image.Source>
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="Menu2"
+                                              Tapped="Menu2OnTap" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Border>
+            <Image Grid.Column="2"
+                   HeightRequest="25">
+                <Image.Source>
+                    <FontImageSource Glyph=""
+                                     Color="Gray"
+                                     Size="25"
+                                     FontFamily="FAS" />
+                </Image.Source>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="Menu3"
+                                          Tapped="Menu3OnTap" />
+                </Image.GestureRecognizers>
+            </Image>
+            <!-- <Label Text="Menu3"
+                   Grid.Column="2"
+                   BackgroundColor="Green">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="Menu3"
+                                          Tapped="Menu3OnTap" />
+                </Label.GestureRecognizers>
+            </Label> -->
+        </Grid>
+    </Grid>
+</ContentPage>

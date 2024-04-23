@@ -7,5 +7,7 @@
     <VerticalStackLayout>
         <CSection:Section Title="Imagenes"
                           RouteName="Imagen" />
+        <CSection:Section Title="Diseño1"
+                          RouteName="Diseño1" />
     </VerticalStackLayout>
 </ContentPage>
