@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="CV"
+             x:Class="Inicio.Views.Curso.Diseño1.CustomControllers.TarjetaSeccion">
+    <Border BackgroundColor="White"
+            Margin="2,10"
+            Padding="20"
+            StrokeShape="RoundRectangle 20">
+        <Border.Shadow>
+            <Shadow Brush="Black"
+                    Offset="20,20"
+                    Radius="40"
+                    Opacity="0.2" />
+        </Border.Shadow>
+        <VerticalStackLayout>
+            <Label Text="{Binding InfoTarjeta.TituloEtiqueta,Source={x:Reference CV}}"
+                   TextColor="{Binding InfoTarjeta.ColorEtiqueta,Source={x:Reference CV}}" />
+            <HorizontalStackLayout Margin="0,10,0,20">
+                <VerticalStackLayout WidthRequest="3"
+                                     HeightRequest="40"
+                                     BackgroundColor="{Binding InfoTarjeta.ColorEtiqueta,Source={x:Reference CV}}" />
+                <VerticalStackLayout Margin="10,0,0,0"
+                                     Spacing="10">
+                    <Label Text="{Binding InfoTarjeta.Titulo,Source={x:Reference CV}}"
+                           FontAttributes="Bold"
+                           FontSize="18" />
+                    <Label Text="{Binding InfoTarjeta.SubTitulo,Source={x:Reference CV}}"
+                           FontSize="12"
+                           TextColor="Gray"
+                           FontFamily="OpenSansRegular" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <Grid ColumnDefinitions="*,*,*">
+                <HorizontalStackLayout Spacing="10">
+                    <Image>
+                        <Image.Source>
+                            <FontImageSource Glyph=""
+                                             FontFamily="FAS"
+                                             Size="15"
+                                             Color="Gray" />
+                        </Image.Source>
+                    </Image>
+                    <Label Text="{Binding InfoTarjeta.Hora,Source={x:Reference CV}}"
+                           VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Grid.Column="1"
+                                       HorizontalOptions="Center"
+                                       Spacing="10">
+                    <Image>
+                        <Image.Source>
+                            <FontImageSource Glyph=""
+                                             FontFamily="FAS"
+                                             Size="15"
+                                             Color="Gray" />
+                        </Image.Source>
+                    </Image>
+                    <Label Text="{Binding InfoTarjeta.Mensajes,Source={x:Reference CV}}"
+                           VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <Border Grid.Column="2"
+                        StrokeShape="RoundRectangle 10"
+                        Padding="4"
+                        WidthRequest="70"
+                        BackgroundColor="#00AC7F">
+                    <Label Text="More"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="White" />
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+    </Border>
+</ContentView>

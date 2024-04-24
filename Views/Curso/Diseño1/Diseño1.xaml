@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Inicio.Views.Curso.Diseño1.Diseño1"
+             xmlns:tarjetaSeccion="clr-namespace:Inicio.Views.Curso.Diseño1.CustomControllers"
+             x:Name="CP"
              Shell.BackgroundColor="#E9EDF2">
     <Shell.BackButtonBehavior>
         <BackButtonBehavior>
@@ -18,11 +20,12 @@
                VerticalOptions="Center"
                HorizontalOptions="Center" />
     </Shell.TitleView>
-    <Grid RowDefinitions="*,80"
+    <Grid RowDefinitions="*,70"
           Padding="20"
           BackgroundColor="#E9EDF2">
-        <VerticalStackLayout>
-            <Grid ColumnDefinitions="*,*,*">
+        <Grid RowDefinitions="Auto,*">
+            <Grid ColumnDefinitions="*,*,*"
+                  Margin="0,0,0,10">
                 <Border StrokeShape="RoundRectangle 50"
                         Margin="8,0"
                         BackgroundColor="Gray">
@@ -50,7 +53,15 @@
                            TextColor="White" />
                 </Border>
             </Grid>
-        </VerticalStackLayout>
+            <CollectionView ItemsSource="{Binding Path=Tarjetas,Source={x:Reference CP}}"
+                            Grid.Row="1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <tarjetaSeccion:TarjetaSeccion InfoTarjeta="{Binding .}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
         <Label Text="Pantalla 2"
                x:Name="pantalla2"
                IsVisible="False"
@@ -89,7 +100,6 @@
                 </Label.GestureRecognizers>
             </Label> -->
             <Border StrokeShape="RoundRectangle 50"
-                    VerticalOptions="Start"
                     HeightRequest="60"
                     WidthRequest="60"
                     BackgroundColor="#00AC7F"
