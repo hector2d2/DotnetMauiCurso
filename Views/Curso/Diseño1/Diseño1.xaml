@@ -10,6 +10,7 @@
             <BackButtonBehavior.IconOverride>
                 <FontImageSource Glyph=""
                                  Size="10"
+                                 Color="Red"
                                  FontFamily="FAS" />
             </BackButtonBehavior.IconOverride>
         </BackButtonBehavior>
@@ -23,7 +24,9 @@
     <Grid RowDefinitions="*,70"
           Padding="20"
           BackgroundColor="#E9EDF2">
-        <Grid RowDefinitions="Auto,*">
+        <Grid RowDefinitions="Auto,*"
+              IsVisible="False"
+              x:Name="pantalla1">
             <Grid ColumnDefinitions="*,*,*"
                   Margin="0,0,0,10">
                 <Border StrokeShape="RoundRectangle 50"
@@ -62,10 +65,196 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Grid>
-        <Label Text="Pantalla 2"
-               x:Name="pantalla2"
-               IsVisible="False"
-               Grid.Row="0" />
+        <ScrollView x:Name="pantalla2"
+                    VerticalScrollBarVisibility="Never"
+                    IsVisible="True">
+            <VerticalStackLayout Spacing="10">
+                <Border BackgroundColor="White"
+                        StrokeShape="RoundRectangle 15"
+                        Padding="20">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <Image HorizontalOptions="Start"
+                               Margin="10,0,0,0">
+                            <Image.Source>
+                                <FontImageSource Glyph=""
+                                                 Size="15"
+                                                 Color="#00AC7F"
+                                                 FontFamily="FAS" />
+                            </Image.Source>
+                        </Image>
+                        <Label Text="Septiembre 2020"
+                               TextColor="#00AC7F"
+                               FontSize="20"
+                               HorizontalOptions="Center"
+                               Grid.Column="1" />
+                        <Image Grid.Column="2"
+                               Margin="0,0,10,0"
+                               HorizontalOptions="End">
+                            <Image.Source>
+                                <FontImageSource Glyph=""
+                                                 Size="15"
+                                                 Color="#00AC7F"
+                                                 FontFamily="FAS" />
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                </Border>
+                <Border BackgroundColor="White"
+                        StrokeShape="RoundRectangle 25"
+                        Padding="18">
+                    <VerticalStackLayout>
+                        <Grid ColumnDefinitions="*,*,*,*,*,*,*"
+                              Margin="0,0,0,15">
+                            <Label Text="SUN"
+                                   TextColor="Gray"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center" />
+                            <Label Text="MON"
+                                   TextColor="Gray"
+                                   FontSize="12"
+                                   HorizontalOptions="Center"
+                                   Grid.Column="1" />
+                            <Label Text="TUE"
+                                   TextColor="Gray"
+                                   FontSize="12"
+                                   HorizontalOptions="Center"
+                                   Grid.Column="2" />
+                            <Label Text="WED"
+                                   TextColor="Gray"
+                                   FontSize="12"
+                                   HorizontalOptions="Center"
+                                   Grid.Column="3" />
+                            <Label Text="THU"
+                                   TextColor="Gray"
+                                   FontSize="12"
+                                   HorizontalOptions="Center"
+                                   Grid.Column="4" />
+                            <Label Text="FRI"
+                                   TextColor="Gray"
+                                   FontSize="12"
+                                   HorizontalOptions="Center"
+                                   Grid.Column="5" />
+                            <Label Text="SUN"
+                                   TextColor="Gray"
+                                   FontSize="12"
+                                   HorizontalOptions="Center"
+                                   Grid.Column="6" />
+                        </Grid>
+                        <CollectionView ItemsSource="{Binding Dias,Source={x:Reference CP}}"
+                                        ItemsLayout="VerticalGrid, 7">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Label Text="{Binding .}"
+                                           TextColor="#00AC7F"
+                                           Margin="8"
+                                           FontAttributes="Bold"
+                                           FontSize="15"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center" />
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Border>
+                <Border BackgroundColor="White"
+                        StrokeShape="RoundRectangle 15"
+                        Padding="20">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <Border BackgroundColor="Red"
+                                Margin="10,0,0,0"
+                                StrokeShape="RoundRectangle 20"
+                                HeightRequest="40"
+                                WidthRequest="40">
+                            <Image HorizontalOptions="Start"
+                                   Source="https://static.vecteezy.com/system/resources/thumbnails/003/428/270/small_2x/businessman-explain-pose-character-design-free-vector.jpg"
+                                   Aspect="AspectFit" />
+                        </Border>
+                        <Label Text="Dylan Cremer"
+                               FontSize="20"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Grid.Column="1" />
+                        <Border BackgroundColor="#00AC7F"
+                                Grid.Column="2"
+                                Margin="0,0,10,0"
+                                StrokeShape="RoundRectangle 35"
+                                HeightRequest="35"
+                                WidthRequest="35">
+                            <Label Text="1"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border BackgroundColor="White"
+                        StrokeShape="RoundRectangle 15"
+                        Padding="20">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <Border BackgroundColor="Red"
+                                Margin="10,0,0,0"
+                                StrokeShape="RoundRectangle 20"
+                                HeightRequest="40"
+                                WidthRequest="40">
+                            <Image HorizontalOptions="Start"
+                                   Source="https://static.vecteezy.com/system/resources/thumbnails/003/428/270/small_2x/businessman-explain-pose-character-design-free-vector.jpg"
+                                   Aspect="AspectFit" />
+                        </Border>
+                        <Label Text="Dylan Cremer"
+                               FontSize="20"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Grid.Column="1" />
+                        <Border BackgroundColor="#00AC7F"
+                                Grid.Column="2"
+                                Margin="0,0,10,0"
+                                StrokeShape="RoundRectangle 35"
+                                HeightRequest="35"
+                                WidthRequest="35">
+                            <Label Text="1"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border BackgroundColor="White"
+                        StrokeShape="RoundRectangle 15"
+                        Padding="20">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <Border BackgroundColor="Red"
+                                Margin="10,0,0,0"
+                                StrokeShape="RoundRectangle 20"
+                                HeightRequest="40"
+                                WidthRequest="40">
+                            <Image HorizontalOptions="Start"
+                                   Source="https://static.vecteezy.com/system/resources/thumbnails/003/428/270/small_2x/businessman-explain-pose-character-design-free-vector.jpg"
+                                   Aspect="AspectFit" />
+                        </Border>
+                        <Label Text="Dylan Cremer"
+                               FontSize="20"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Grid.Column="1" />
+                        <Border BackgroundColor="#00AC7F"
+                                Grid.Column="2"
+                                Margin="0,0,10,0"
+                                StrokeShape="RoundRectangle 35"
+                                HeightRequest="35"
+                                WidthRequest="35">
+                            <Label Text="1"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </Border>
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
         <Label Text="Pantalla 3"
                IsVisible="False"
                x:Name="pantalla3"

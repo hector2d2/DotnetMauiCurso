@@ -6,10 +6,19 @@ public partial class Diseño1 : ContentPage
 {
 	public List<MInfoTarjetaSeccion> Tarjetas { get; set; }
 
+	public List<int> Dias {get; set; }
+
 
 	public Diseño1()
 	{
 		Tarjetas = new();
+		Dias = new();
+
+		for (int i = 0; i < 35; i++)
+		{
+			Dias.Add(i);
+		}
+
 		Tarjetas.Add(new MInfoTarjetaSeccion
 		{
 			TituloEtiqueta = "Urgent",
@@ -43,19 +52,19 @@ public partial class Diseño1 : ContentPage
 
 	public void Menu1OnTap(object sender, EventArgs e)
 	{
-		// pantalla1.IsVisible = true;
+		pantalla1.IsVisible = true;
 		pantalla2.IsVisible = false;
 		pantalla3.IsVisible = false;
 	}
 	public void Menu2OnTap(object sender, EventArgs e)
 	{
-		// pantalla1.IsVisible = false;
+		pantalla1.IsVisible = false;
 		pantalla2.IsVisible = true;
 		pantalla3.IsVisible = false;
 	}
 	public void Menu3OnTap(object sender, EventArgs e)
 	{
-		// pantalla1.IsVisible = false;
+		pantalla1.IsVisible = false;
 		pantalla2.IsVisible = false;
 		pantalla3.IsVisible = true;
 	}

@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Inicio.Models;
-using Kotlin.Properties;
 
 namespace Inicio.ViewModel;
 
