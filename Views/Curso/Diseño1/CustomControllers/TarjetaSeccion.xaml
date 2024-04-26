@@ -9,8 +9,7 @@
             StrokeShape="RoundRectangle 20">
         <Border.Shadow>
             <Shadow Brush="Black"
-                    Offset="20,20"
-                    Radius="40"
+                    Radius="4"
                     Opacity="0.2" />
         </Border.Shadow>
         <VerticalStackLayout>

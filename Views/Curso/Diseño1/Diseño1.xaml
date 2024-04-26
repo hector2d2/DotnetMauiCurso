@@ -9,8 +9,8 @@
         <BackButtonBehavior>
             <BackButtonBehavior.IconOverride>
                 <FontImageSource Glyph=""
-                                 Size="10"
-                                 Color="Red"
+                                 Size="20"
+                                 Color="Blue"
                                  FontFamily="FAS" />
             </BackButtonBehavior.IconOverride>
         </BackButtonBehavior>
@@ -24,6 +24,7 @@
     <Grid RowDefinitions="*,70"
           Padding="20"
           BackgroundColor="#E9EDF2">
+        <!-- Pantalla 1 -->
         <Grid RowDefinitions="Auto,*"
               IsVisible="False"
               x:Name="pantalla1">
@@ -65,9 +66,10 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Grid>
+        <!-- Pantalla 2 -->
         <ScrollView x:Name="pantalla2"
                     VerticalScrollBarVisibility="Never"
-                    IsVisible="True">
+                    IsVisible="False">
             <VerticalStackLayout Spacing="10">
                 <Border BackgroundColor="White"
                         StrokeShape="RoundRectangle 15"
@@ -255,10 +257,203 @@
                 </Border>
             </VerticalStackLayout>
         </ScrollView>
-        <Label Text="Pantalla 3"
-               IsVisible="False"
-               x:Name="pantalla3"
-               Grid.Row="0" />
+        <!-- Pantalla 3 -->
+        <ScrollView x:Name="pantalla3"
+                    VerticalScrollBarVisibility="Never"
+                    IsVisible="True">
+            <Grid ColumnDefinitions="*,*"
+                  ColumnSpacing="15"
+                  RowSpacing="15"
+                  RowDefinitions="*,*,*">
+                <Border BackgroundColor="#00AC7F"
+                        StrokeShape="RoundRectangle 25"
+                        Padding="20">
+                    <Grid RowDefinitions="*,*">
+                        <Image HeightRequest="30"
+                               Margin="0,0,0,60"
+                               WidthRequest="30"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start">
+                            <Image.Source>
+                                <FontImageSource Glyph=""
+                                                 Size="20"
+                                                 Color="White"
+                                                 FontFamily="FAS" />
+                            </Image.Source>
+                        </Image>
+                        <VerticalStackLayout Grid.Row="1"
+                                             VerticalOptions="End">
+                            <Label Text="Work and business"
+                                   FontAttributes="Bold"                                   
+                                   FontSize="20"
+                                   TextColor="White" />
+                            <Label Text="6 Tasks"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   Margin="0,20,0,0"
+                                   VerticalOptions="End" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+                <Border BackgroundColor="White"
+                        Grid.Column="1"
+                        StrokeShape="RoundRectangle 25"
+                        Padding="25">
+                    <Grid RowDefinitions="*,Auto">
+                        <Image HeightRequest="30"
+                               WidthRequest="30"
+                                Margin="0,0,0,60"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start">
+                            <Image.Source>
+                                <FontImageSource Glyph=""
+                                                 Size="20"
+                                                 Color="Gray"
+                                                 FontFamily="FAS" />
+                            </Image.Source>
+                        </Image>
+                        <VerticalStackLayout Grid.Row="1"
+                                             VerticalOptions="End">
+                            <Label Text="Vacations and Trips"
+                                   FontAttributes="Bold"
+                                   FontSize="20"
+                                   TextColor="#00AC7F" />
+                            <Label Text="6 Tasks"
+                                   TextColor="Gray"
+                                   FontAttributes="Bold"
+                                   Margin="0,20,0,0"
+                                   VerticalOptions="End" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+                <Border BackgroundColor="White"
+                        Grid.Row="1"
+                        StrokeShape="RoundRectangle 25"
+                        Padding="25">
+                    <Grid RowDefinitions="*,*">
+                        <Image HeightRequest="30"
+                               WidthRequest="30"
+                                Margin="0,0,0,60"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start">
+                            <Image.Source>
+                                <FontImageSource Glyph=""
+                                                 Size="20"
+                                                 Color="Gray"
+                                                 FontFamily="FAS" />
+                            </Image.Source>
+                        </Image>
+                        <VerticalStackLayout Grid.Row="1"
+                                             VerticalOptions="End">
+                            <Label Text="Vacations and Trips"
+                                   FontAttributes="Bold"
+                                    FontSize="20"
+                                   TextColor="#00AC7F" />
+                            <Label Text="6 Tasks"
+                                   TextColor="Gray"
+                                   FontAttributes="Bold"
+                                   Margin="0,20,0,0"
+                                   VerticalOptions="End" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+                <Border BackgroundColor="White"
+                        Grid.Row="1"
+                        Grid.Column="1"            
+                        StrokeShape="RoundRectangle 25"
+                        Padding="25">
+                    <Grid RowDefinitions="*,*">
+                        <Image HeightRequest="30"
+                               WidthRequest="30"
+                               VerticalOptions="Start"
+                                Margin="0,0,0,60"
+                               HorizontalOptions="Start">
+                            <Image.Source>
+                                <FontImageSource Glyph=""
+                                                 Size="20"
+                                                 Color="Gray"
+                                                 FontFamily="FAS" />
+                            </Image.Source>
+                        </Image>
+                        <VerticalStackLayout Grid.Row="1"
+                                             VerticalOptions="End">
+                            <Label Text="Vacations and Trips"
+                                   FontAttributes="Bold"
+                                    FontSize="20"
+                                   TextColor="#00AC7F" />
+                            <Label Text="6 Tasks"
+                                   TextColor="Gray"
+                                   FontAttributes="Bold"
+                                   Margin="0,20,0,0"
+                                   VerticalOptions="End" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+                <Border BackgroundColor="White"
+                        Grid.Row="2"
+                        StrokeShape="RoundRectangle 25"
+                        Padding="25">
+                    <Grid RowDefinitions="*,*">
+                        <Image HeightRequest="30"
+                               WidthRequest="30"
+                                Margin="0,0,0,60"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Start">
+                            <Image.Source>
+                                <FontImageSource Glyph=""
+                                                 Size="20"
+                                                 Color="Gray"
+                                                 FontFamily="FAS" />
+                            </Image.Source>
+                        </Image>
+                        <VerticalStackLayout Grid.Row="1"
+                                             VerticalOptions="End">
+                            <Label Text="Vacations and Trips"
+                                   FontAttributes="Bold"
+                                    FontSize="20"
+                                   TextColor="#00AC7F" />
+                            <Label Text="6 Tasks"
+                                   TextColor="Gray"
+                                   FontAttributes="Bold"
+                                   Margin="0,20,0,0"
+                                   VerticalOptions="End" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+                <Border BackgroundColor="White"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        StrokeShape="RoundRectangle 25"
+                        Padding="25">
+                    <Grid RowDefinitions="*,*">
+                        <Image HeightRequest="30"
+                               WidthRequest="30"
+                               VerticalOptions="Start"
+                                Margin="0,0,0,60"
+                               HorizontalOptions="Start">
+                            <Image.Source>
+                                <FontImageSource Glyph=""
+                                                 Size="20"
+                                                 Color="Gray"
+                                                 FontFamily="FAS" />
+                            </Image.Source>
+                        </Image>
+                        <VerticalStackLayout Grid.Row="1"
+                                             VerticalOptions="End">
+                            <Label Text="Vacations and Trips"
+                                   FontAttributes="Bold"
+                                    FontSize="20"
+                                   TextColor="#00AC7F" />
+                            <Label Text="6 Tasks"
+                                   TextColor="Gray"
+                                   FontAttributes="Bold"
+                                   Margin="0,20,0,0"
+                                   VerticalOptions="End" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+            </Grid>
+        </ScrollView>
         <Grid ColumnDefinitions="*,*,*"
               Grid.Row="1">
             <Image HeightRequest="25">
