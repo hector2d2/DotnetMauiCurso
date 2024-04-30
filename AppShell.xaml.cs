@@ -1,4 +1,6 @@
 ﻿using Inicio.Views.Curso.Diseño1;
+using Inicio.Views.Curso.Gestores;
+using Inicio.Views.Curso.MenuGestores;
 using Inicio.Views.Curso.Imagenes;
 using Inicio.Views.Curso.MenuCurso;
 using Inicio.Views.Ejercicios.MenuEjercicios;
@@ -19,5 +21,7 @@ public partial class AppShell : Shell
 		Routing.RegisterRoute(nameof(MenuCurso),typeof(MenuCurso));
 		Routing.RegisterRoute(nameof(TocaElCuadrado),typeof(TocaElCuadrado));
 		Routing.RegisterRoute(nameof(Diseño1),typeof(Diseño1));
+		// Routing.RegisterRoute(nameof(MenuGestores),typeof(MenuGestores));
+		// Routing.RegisterRoute(nameof(DragAndDrop),typeof(DragAndDrop));
 	}
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inicio.Views.Curso.Gestores.DragAndDrop"
+             xmlns:VMdragDrop="clr-namespace:Inicio.ViewModel"
+             x:Name="CP">
+    <ContentPage.BindingContext>
+        <VMdragDrop:VMDragAndDrop />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <CarouselView ItemsSource="{Binding Numeros}"
+                      IsSwipeEnabled="False"
+                      HeightRequest="300"
+                      Position="{Binding Position}"
+                      BackgroundColor="Blue">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout>
+                        <Label Text="{Binding .[0]}" />
+                        <Label Text="+" />
+                        <Label Text="{Binding .[1]}" />
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <Border HeightRequest="60"
+                Margin="10"
+                WidthRequest="150"
+                BackgroundColor="White">
+            <Border.GestureRecognizers>
+                <DropGestureRecognizer DropCommand="{Binding SoltarResultadoCommand}" />
+            </Border.GestureRecognizers>
+            <Label Text="Arrastra aqui el resultado"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+        </Border>
+        <FlexLayout BindableLayout.ItemsSource="{Binding Respuestas}"
+                    Wrap="Wrap">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="10">
+                        <Border.GestureRecognizers>
+                            <DragGestureRecognizer DragStartingCommand="{Binding Path=BindingContext.AgarroResultadoCommand,Source={x:Reference CP}}"
+                                                   DragStartingCommandParameter="{Binding .}" />
+                        </Border.GestureRecognizers>
+                        <Label Text="{Binding .}"
+                               Margin="8" />
+                    </Border>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+    </VerticalStackLayout>
+</ContentPage>

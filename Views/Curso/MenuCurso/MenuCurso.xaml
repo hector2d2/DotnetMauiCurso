@@ -9,5 +9,7 @@
                           RouteName="Imagen" />
         <CSection:Section Title="Diseño1"
                           RouteName="Diseño1" />
+        <CSection:Section Title="MenuGestores"
+                          RouteName="//MenuGestores/DragAndDrop" />
     </VerticalStackLayout>
 </ContentPage>

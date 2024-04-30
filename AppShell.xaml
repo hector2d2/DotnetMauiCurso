@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Inicio"
     xmlns:menuInicio="clr-namespace:Inicio.Views.MenuInicio"
+    xmlns:vGestores="clr-namespace:Inicio.Views.Curso.Gestores"
     xmlns:mainPage="clr-namespace:Inicio.Views"     
     Shell.FlyoutBehavior="Disabled"
     Shell.BackgroundColor="Red"
@@ -12,8 +13,36 @@
 
     <ShellContent
         Title="Home"
+        Shell.FlyoutItemIsVisible="False"
         ContentTemplate="{DataTemplate menuInicio:MenuInicio}"
         Route="MenuInicio" />
+
+    <!-- //MenuGestores-->
+    <FlyoutItem Route="MenuGestores"
+                Shell.FlyoutBehavior="Flyout"
+                FlyoutDisplayOptions="AsMultipleItems"
+                Title="Menu">
+        <!-- //MenuGestores/DragAndDrop-->
+        <ShellContent Route="DragAndDrop"
+                      Title="DragAndDrop"
+                      Shell.TabBarIsVisible="False"                   
+                      ContentTemplate="{DataTemplate vGestores:DragAndDrop}"/>
+        <!-- //MenuGestores/Swipe-->
+        <ShellContent Route="Swipe"
+                      Title="Gestor Swipe"
+                      Shell.TabBarIsVisible="False"
+                      ContentTemplate="{DataTemplate vGestores:GestorSwipe}"/>
+        <!-- //MenuGestores/Pan-->
+        <ShellContent Route="Pan"
+                      Title="Gestor Pan"
+                      Shell.TabBarIsVisible="False"
+                      ContentTemplate="{DataTemplate vGestores:GestorPan}"/>
+        <!-- //MenuGestores/Pin-->
+        <ShellContent Route="Pin"
+                      Title="Gestor Pin"
+                      Shell.TabBarIsVisible="False"
+                      ContentTemplate="{DataTemplate vGestores:GestorPin}"/>
+    </FlyoutItem>
 
     <!-- <ShellContent
         Title="Segunda Pagina"
